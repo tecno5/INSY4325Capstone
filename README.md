@@ -1,7 +1,9 @@
 # Bookstore System Prototype
 
 A Java Swing desktop prototype demonstrating a simple Bookstore System with eight use‐cases and full menu/navigation.  
-No real database or business logic—just a GUI skeleton with placeholder actions and a bit of static sample data so it looks “plugged-in.”
+No real database or business logic—just a GUI skeleton with placeholder actions and a bit of static sample data.'
+
+Made for INSY 4325 Capstone Systems development Protoype
 
 ---
 
