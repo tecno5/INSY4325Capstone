@@ -60,7 +60,7 @@ public class MainApp extends JFrame {
     
     public MainApp() {
         // Set up the main frame
-        setTitle("Bookstore System Prototype");
+        setTitle(" The Bookstore System Prototype");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -155,7 +155,7 @@ public class MainApp extends JFrame {
     private void createPanels() {
         // Create a home panel
         JPanel homePanel = new JPanel(new BorderLayout());
-        JLabel welcomeLabel = new JLabel("Welcome to Bookstore System Prototype", JLabel.CENTER);
+        JLabel welcomeLabel = new JLabel("Welcome to The Bookstore System Prototype", JLabel.CENTER);
         welcomeLabel.setFont(new Font("Arial", Font.BOLD, 24));
         homePanel.add(welcomeLabel, BorderLayout.CENTER);
         
