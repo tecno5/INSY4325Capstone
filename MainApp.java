@@ -52,6 +52,11 @@ public class MainApp extends JFrame {
     public static final String ADD_CUSTOMER_PANEL = "AddCustomerPanel";
     public static final String VIEW_HISTORY_PANEL = "ViewHistoryPanel";
     public static final String HOME_PANEL = "HomePanel";
+    public static final String UPDATE_CUSTOMER_PANEL = "UpdateCustomerPanel";
+    public static final String REMOVE_CUSTOMER_PANEL = "RemoveCustomerPanel";
+    public static final String ADD_CLERK_PANEL = "AddClerkPanel";
+    public static final String UPDATE_CLERK_PANEL = "UpdateClerkPanel";
+    public static final String REMOVE_CLERK_PANEL = "RemoveClerkPanel";
     
     public MainApp() {
         // Set up the main frame
@@ -112,17 +117,36 @@ public class MainApp extends JFrame {
         JMenu customersMenu = new JMenu("Customers");
         JMenuItem addCustomerItem = new JMenuItem("Add Customer");
         JMenuItem viewHistoryItem = new JMenuItem("View Purchase History");
+        JMenuItem updateCustomerItem = new JMenuItem("Update Customer");
+        JMenuItem removeCustomerItem = new JMenuItem("Remove Customer");
         
         addCustomerItem.addActionListener(e -> cardLayout.show(contentPanel, ADD_CUSTOMER_PANEL));
         viewHistoryItem.addActionListener(e -> cardLayout.show(contentPanel, VIEW_HISTORY_PANEL));
+        updateCustomerItem.addActionListener(e -> cardLayout.show(contentPanel, UPDATE_CUSTOMER_PANEL));
+        removeCustomerItem.addActionListener(e -> cardLayout.show(contentPanel, REMOVE_CUSTOMER_PANEL));
         
         customersMenu.add(addCustomerItem);
         customersMenu.add(viewHistoryItem);
+        customersMenu.add(updateCustomerItem);
+        customersMenu.add(removeCustomerItem);
+        
+        // Clerks Menu
+        JMenu clerksMenu = new JMenu("Clerks");
+        JMenuItem addClerkItem = new JMenuItem("Add Clerk");
+        JMenuItem updateClerkItem = new JMenuItem("Update Clerk");
+        JMenuItem removeClerkItem = new JMenuItem("Remove Clerk");
+        addClerkItem.addActionListener(e -> cardLayout.show(contentPanel, ADD_CLERK_PANEL));
+        updateClerkItem.addActionListener(e -> cardLayout.show(contentPanel, UPDATE_CLERK_PANEL));
+        removeClerkItem.addActionListener(e -> cardLayout.show(contentPanel, REMOVE_CLERK_PANEL));
+        clerksMenu.add(addClerkItem);
+        clerksMenu.add(updateClerkItem);
+        clerksMenu.add(removeClerkItem);
         
         // Add menus to menu bar
         menuBar.add(salesMenu);
         menuBar.add(inventoryMenu);
         menuBar.add(customersMenu);
+        menuBar.add(clerksMenu);
         
         // Set the menu bar
         setJMenuBar(menuBar);
@@ -145,6 +169,11 @@ public class MainApp extends JFrame {
         contentPanel.add(new RemoveInventoryPanel(this), REMOVE_INVENTORY_PANEL);
         contentPanel.add(new AddCustomerPanel(this), ADD_CUSTOMER_PANEL);
         contentPanel.add(new ViewHistoryPanel(this), VIEW_HISTORY_PANEL);
+        contentPanel.add(new UpdateCustomerPanel(this), UPDATE_CUSTOMER_PANEL);
+        contentPanel.add(new RemoveCustomerPanel(this), REMOVE_CUSTOMER_PANEL);
+        contentPanel.add(new AddClerkPanel(this), ADD_CLERK_PANEL);
+        contentPanel.add(new UpdateClerkPanel(this), UPDATE_CLERK_PANEL);
+        contentPanel.add(new RemoveClerkPanel(this), REMOVE_CLERK_PANEL);
     }
     
     // Method to navigate back to home panel

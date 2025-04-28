@@ -2,10 +2,13 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Use SwingUtilities to ensure GUI is created on Event Dispatch Thread
+        // Show splash, then launch main app once splash finishes
         SwingUtilities.invokeLater(() -> {
-            MainApp app = new MainApp();
-            app.setVisible(true);
+            SplashScreen splash = new SplashScreen();
+            splash.showSplash(() -> {
+                MainApp app = new MainApp();
+                app.setVisible(true);
+            });
         });
     }
 }
